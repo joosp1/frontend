@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cor-primaria: #123e5a;
+  --cor-primaria-escura: #0b2b40;
+  --cor-destaque: #2f6bff;
+  --cor-destaque-suave: #eaf1ff;
+  --cor-fundo: #f6f8fb;
+  --cor-superficie: #ffffff;
+  --cor-superficie-secundaria: #f9fafc;
+  --cor-texto: #172033;
+  --cor-texto-secundario: #667085;
+  --cor-texto-suave: #98a2b3;
+  --cor-borda: #e7ebf0;
+  --cor-sucesso: #22a06b;
+  --cor-sucesso-suave: #e8f7f0;
+  --cor-alerta: #e7a21a;
+  --cor-alerta-suave: #fff6db;
+  --cor-erro: #d94c4c;
+  --cor-erro-suave: #fdecec;
+  --cor-roxo: #7c5cfc;
+  --cor-roxo-suave: #f0ecff;
+  --background: var(--cor-fundo);
+  --foreground: var(--cor-texto);
+  --card: var(--cor-superficie);
+  --card-foreground: var(--cor-texto);
+  --primary: var(--cor-primaria);
+  --primary-foreground: #ffffff;
+  --secondary: var(--cor-destaque);
+  --secondary-foreground: #ffffff;
+  --muted: var(--cor-superficie-secundaria);
+  --muted-foreground: var(--cor-texto-secundario);
+  --success: var(--cor-sucesso);
+  --warning: var(--cor-alerta);
+  --destructive: var(--cor-erro);
+  --border: var(--cor-borda);
+  --ring: var(--cor-destaque);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-primary-dark: var(--cor-primaria-escura);
+  --color-highlight-soft: var(--cor-destaque-suave);
+  --color-surface-secondary: var(--cor-superficie-secundaria);
+  --color-soft-foreground: var(--cor-texto-suave);
+  --color-success-soft: var(--cor-sucesso-suave);
+  --color-warning-soft: var(--cor-alerta-suave);
+  --color-destructive-soft: var(--cor-erro-suave);
+  --color-purple: var(--cor-roxo);
+  --color-purple-soft: var(--cor-roxo-suave);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+html {
+  background: var(--background);
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfd7e3;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
 }
